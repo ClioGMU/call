@@ -16,12 +16,12 @@ class BlogDetailView(DetailView):
 class BlogCreateView(CreateView):
     model = Post
     template_name = 'post_new.html'
-    fields = ['title', 'author', 'call_date', 'denomination', 'city', 'state', 'body']
+    fields = ['title', 'author', 'call_date', 'denomination', 'city', 'state', 'country', 'body']
 
 class BlogUpdateView(UpdateView):
     model = Post
     template_name = 'post_edit.html'
-    fields = ['title', 'call_date', 'denomination', 'city', 'state', 'body']
+    fields = ['title', 'call_date', 'denomination', 'city', 'state', 'country','body']
 
 class BlogDeleteView(DeleteView):
     model = Post
