@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 from django.urls import reverse
 from model_utils import Choices
 from django_countries.fields import CountryField
@@ -22,3 +23,4 @@ class Post(models.Model):
         
     def get_absolute_url(self):
         return reverse('post_detail', args=[str(self.pk)])
+
