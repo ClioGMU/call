@@ -8,7 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 class BlogListView(ListView):
     model = Post
     template_name = 'home.html'
-    ordering = ["-date"]
+    ordering = ["-call_date"]
 
 class BlogDetailView(DetailView):
     model = Post
