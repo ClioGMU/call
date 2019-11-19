@@ -17,7 +17,7 @@ class BlogDetailView(DetailView):
 class BlogCreateView(LoginRequiredMixin, CreateView):
     model = Post
     template_name = 'post_new.html'
-    fields = ['title', 'call_date', 'denomination', 'city', 'state', 'country', 'body']
+    fields = ['title', 'call_date', 'denomination', 'country','state','city', 'body']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -27,7 +27,7 @@ class BlogCreateView(LoginRequiredMixin, CreateView):
 class BlogUpdateView(LoginRequiredMixin, UpdateView):
     model = Post
     template_name = 'post_edit.html'
-    fields = ['title', 'call_date', 'denomination', 'country','state', 'city', 'body']
+    fields = ['title', 'call_date', 'denomination', 'country','state','city', 'body']
 
 class BlogDeleteView(DeleteView):
     model = Post
