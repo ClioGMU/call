@@ -11,7 +11,7 @@ class Post(models.Model):
         'users.CustomUser',
         on_delete=models.CASCADE,
     )
-    call_date = models.DateField(default=None)
+    call_date = models.DateField(default=None, help_text='MM/DD/YYYY')
     denomination = models.CharField(max_length=50, default=None)
     country = CountryField()
     state = models.CharField(max_length=20, default=None, choices= STATE_CHOICES, help_text='If outside of the US please note location within body')
