@@ -5,6 +5,14 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400"
     rel="stylesheet">
     <link href="{% static 'css/base.css' %}" rel="stylesheet">
+    {% if user.is_authenticated %}
+    <p>Greetings {{ user.username }}!</p>
+    <p><a href="{% url 'logout' %}">Log out</a></p>
+  {% else %}
+    <p>Sadly, you are not logged in.</p>
+    <a href="{% url 'login' %}">Log In</a>
+    <a href="{% url 'signup' %}">or Sign Up</a>
+  {% endif %}
   </head>
   <body>
     <div>
@@ -17,14 +25,7 @@
         </div>   
       </header>
 
-      {% if user.is_authenticated %}
-        <p>Greetings {{ user.username }}!</p>
-        <p><a href="{% url 'logout' %}">Log out</a></p>
-      {% else %}
-        <p>Sadly, you are not logged in.</p>
-        <a href="{% url 'login' %}">Log In</a>
-        <a href="{% url 'signup' %}">or Sign Up</a>
-      {% endif %}
+  
     {% block content %}
     {% endblock content %}
     </div>

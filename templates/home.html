@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block content %}
-  {% for post in object_list %}
-  <div class="post-entry">
-    <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
-    <p>{{ post.body }}</p>
-  </div>
- {% endfor %}
+
+<img style="width: 400; height: 300;"
+ src="{% static 'pastor_pic.jpg' %}">
+<img style="width: 450; height: 300;"
+src="{% static 'pastor2.jpg' %}">
+<img style="width: 450; height: 300;"
+src="{% static 'woman_preaching.jpg' %}">
 {% endblock content %}
