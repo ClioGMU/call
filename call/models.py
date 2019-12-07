@@ -23,7 +23,7 @@ class Post(models.Model):
         'users.CustomUser',
         on_delete=models.CASCADE,
     )
-    call_date = models.DateField(default=None)
+    call_date = models.DateField(default=None, help_text='MM/DD/YYYY')
     denomination = models.CharField(max_length=50, default=None)
     country = models.ForeignKey(Country, on_delete=models.SET_NULL, null=True)
     state = models.ForeignKey(State, on_delete=models.SET_NULL, null=True)

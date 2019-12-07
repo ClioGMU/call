@@ -1,9 +1,17 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .models import Post
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+
+class AboutPageView(TemplateView):
+    template_name = 'about.html'
+
+class CallListView(ListView):
+    model = Post
+    template_name = "call_list.html"
+    
 
 class BlogListView(ListView):
     model = Post
