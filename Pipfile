@@ -8,8 +8,9 @@ pylint = "*"
 black = "*"
 
 [packages]
-django = "==2.2.*"
+django = "==2.2.8"
 django-model-utils = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
