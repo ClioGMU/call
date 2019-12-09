@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'call.apps.CallConfig',
+    'search.apps.SearchConfig',
     'accounts.apps.AccountsConfig',
     'users.apps.UsersConfig',
 ]
