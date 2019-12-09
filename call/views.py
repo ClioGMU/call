@@ -15,7 +15,6 @@ class AboutPageView(TemplateView):
 class CallListView(ListView):
     model = Post
     template_name = "call_list.html"
-    
 
 class BlogListView(ListView):
     model = Post

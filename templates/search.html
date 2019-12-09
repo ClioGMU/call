@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
 <h1>Search the Database</h1>
 
 <br/>
@@ -26,3 +30,5 @@ Search <input type="text" name="q" value="{{request.GET.q}}" placeholder="Search
 No search results for this query
 {% endif %}
 {% endif %}
+
+{% endblock content %}

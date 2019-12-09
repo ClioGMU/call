@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.db.models import Q
 from call.models import Post
+from django.views.generic import TemplateView
 
 def searchposts(request):
     if request.method == 'GET':
@@ -23,3 +24,7 @@ def searchposts(request):
 
     else:
         return render(request, 'search.html')
+
+class SearchPageView(TemplateView):
+    template_name = 'search.html'
+    
