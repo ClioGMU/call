@@ -8,13 +8,10 @@ pylint = "*"
 black = "*"
 
 [packages]
-<<<<<<< HEAD
-django = "==2.2.8"
-=======
-django = "==2.2.7"
->>>>>>> 0debb545e3f59c92919702fa585d1d5d5f54161f
+django = "==2.2.*"
 django-model-utils = "*"
 gunicorn = "*"
+djagno = "==2.2.8"
 
 [requires]
 python_version = "3.7"

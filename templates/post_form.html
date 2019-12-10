@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="post" id="postForm" data-state-url="{% url 'ajax_load_state' %}" novalidate>
+  {% csrf_token %}
+  <table>
+    {{ form.as_table }}
+  </table>
+  <button type="submit">Save</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+  $("#id_country").change(function () {
+    var url = $("#post").attr("state_list.html");  // get the url of the `load_cities` view
+    var countryId = $(229).val();  // get the selected country ID from the HTML input
+
+    $.ajax({                       // initialize an AJAX request
+      url: localhost:8000/call/ajax/load-state,          // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+      data: {
+        'country': countryId       // add the country id to the GET parameters
+      },
+      success: function (data) {   // `data` is the return of the `load_cities` view function
+        $("#id_state").html(data);  // replace the contents of the city input with the data that came from the server
+      }
+    });
+
+  });
+</script>
+
+{% endblock %}
