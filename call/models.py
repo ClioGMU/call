@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.urls import reverse
-from model_utils import Choices
+# from model_utils import Choices
 
 class Country(models.Model):
     name = models.CharField(max_length=50)
