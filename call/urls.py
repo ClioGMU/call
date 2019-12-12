@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import AboutPageView
+from .views import AboutPageView, load_state
+from .import views
 
 from .views import (
     BlogListView,
@@ -20,4 +21,5 @@ urlpatterns = [
     path('', BlogListView.as_view(), name='home'),
     path('about/', AboutPageView.as_view(), name='about'),
     path('call_list', CallListView.as_view(), name="call_list"),
+    path('ajax/load-state/', views.load_state, name='ajax_load_state')
 ]
