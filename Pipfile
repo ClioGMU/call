@@ -10,6 +10,7 @@ black = "*"
 [packages]
 django = "==2.2.*"
 django-model-utils = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
