@@ -12,7 +12,7 @@ class Country(models.Model):
 class State(models.Model):
     STATE_CHOICES = (("Alabama","Alabama"),("Alaska","Alaska"),("Arizona","Arizona"),("Arkansas","Arkansas"),("California","California"),("Colorado","Colorado"),("Connecticut","Connecticut"),("Delaware","Delaware"),("Florida","Florida"),("Georgia","Georgia"),("Hawaii","Hawaii"),("Idaho","Idaho"),("Illinois","Illinois"),("Indiana","Indiana"),("Iowa","Iowa"),("Kansas","Kansas"),("Kentucky","Kentucky"),("Louisiana","Louisiana"),("Maine","Maine"),("Maryland","Maryland"),("Massachusetts","Massachusetts"),("Michigan","Michigan"),("Minnesota","Minnesota"),("Mississippi","Mississippi"),("Missouri","Missouri"),("Montana","Montana"),("Nebraska","Nebraska"),("Nevada","Nevada"),("New Hampshire","New Hampshire"),("New Jersey","New Jersey"),("New Mexico","New Mexico"),("New York","New York"),("North Carolina","North Carolina"),("North Dakota","North Dakota"),("Ohio","Ohio"),("Oklahoma","Oklahoma"),("Oregon","Oregon"),("Pennsylvania","Pennsylvania"),("Rhode Island","Rhode Island"),("South Carolina","South Carolina"),("South Dakota","South Dakota"),("Tennessee","Tennessee"),("Texas","Texas"),("Utah","Utah"),("Vermont","Vermont"),("Virginia","Virginia"),("Washington","Washington"),("West Virginia","West Virginia"),("Wisconsin","Wisconsin"),("Wyoming","Wyoming"), ("Outside of the US", "Outside of the US"))
     country = models.ForeignKey(Country, on_delete=models.CASCADE)
-    name = models.CharField(max_length=20, default=None, choices= STATE_CHOICES, help_text='If outside of the US please note location within body')
+    name = models.CharField(blank= True, null= True, max_length=20, default=None, choices= STATE_CHOICES, help_text='If outside of the US please note location within body')
  
     def __str__(self):
         return self.name
@@ -26,7 +26,7 @@ class Post(models.Model):
     call_date = models.DateField(default=None, help_text='MM/DD/YYYY')
     denomination = models.CharField(max_length=50, default=None)
     country = models.ForeignKey(Country, on_delete=models.SET_NULL, null=True)
-    state = models.ForeignKey(State, on_delete=models.SET_NULL, null=True)
+    state = models.ForeignKey(State, on_delete=models.SET_NULL, null=True, blank= True)
     city = models.CharField(max_length=50, default=None)
     body = models.TextField()
 
