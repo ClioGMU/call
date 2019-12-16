@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.urls import reverse
@@ -19,7 +20,7 @@ class State(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey(
-        'users.CustomUser',
+        settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
     )
     call_date = models.DateField(default=None, help_text='MM/DD/YYYY')
